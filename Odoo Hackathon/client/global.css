@@ -1,0 +1,133 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    /* Luxurious teal-driven EcoFinds palette (HSL) */
+    /* Light background (Ivory-like) */
+    --background: 40 18% 96%;
+    --foreground: 210 12% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 12% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 12% 18%;
+
+    /* Primary teal derived from provided image */
+    /* approx: #008E87 -> HSL(176 72% 28%) */
+    --primary: 176 72% 28%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: soft ivory/blush for contrast */
+    --secondary: 30 28% 86%;
+    --secondary-foreground: 210 12% 18%;
+
+    /* Muted: subtle sage */
+    --muted: 150 6% 68%;
+    --muted-foreground: 210 10% 38%;
+
+    /* Accent: warm gold/bronze for luxury highlights */
+    --accent: 35 45% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 10% 90%;
+    --input: 30 10% 90%;
+    --ring: 176 72% 28%;
+
+    --radius: 0.9rem;
+
+    /* Sidebar tokens aligned to palette */
+    --sidebar-background: 40 18% 96%;
+    --sidebar-foreground: 210 12% 18%;
+    --sidebar-primary: 176 72% 28%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 35 45% 70%;
+    --sidebar-accent-foreground: 210 12% 18%;
+    --sidebar-border: 30 10% 90%;
+    --sidebar-ring: 176 72% 28%;
+  }
+
+  .dark {
+    --background: 176 20% 8%;
+    --foreground: 0 0% 100%;
+
+    --card: 176 22% 12%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 176 22% 12%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 176 60% 44%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 30 20% 22%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 150 8% 18%;
+    --muted-foreground: 0 0% 85%;
+
+    --accent: 35 45% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 65% 40%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 176 10% 18%;
+    --input: 176 10% 18%;
+    --ring: 176 60% 44%;
+    --sidebar-background: 176 20% 6%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 176 60% 44%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 176 8% 14%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 176 8% 14%;
+    --sidebar-ring: 176 60% 44%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Luxury headings: elegant serif */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Inter, ui-serif, Georgia, 'Times New Roman', serif;
+    letter-spacing: -0.02em;
+  }
+
+  .font-extrabold { font-weight: 800; }
+
+  /* Floating gold CTA */
+  .cta-floating {
+    position: fixed;
+    right: 1rem;
+    bottom: 1.25rem;
+    z-index: 60;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 150ms ease, box-shadow 150ms ease;
+  }
+  .cta-floating:hover {
+    transform: translateY(-4px);
+  }
+}
